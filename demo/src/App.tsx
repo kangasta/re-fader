@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Fader } from 're-fader';
+import { Fader, Switch } from 're-fader';
 
 import './App.css';
 
 const App: React.FC = () => {
+  const [i, setI ] = useState<number>(0)
+  useEffect(() => {
+    const id = setInterval(() => setI(prev => prev++));
+    return () => clearInterval(id);
+  })
+
   return (
     <div className="App">
       <Fader>Show</Fader>
@@ -12,6 +18,7 @@ const App: React.FC = () => {
       <Fader visibility='hide'>Hide</Fader>
       <Fader scaling='xy' visibility='hide'>Scaled Hide</Fader>
       <Fader visibility='none'>None</Fader>
+      <Switch>{i}</Switch>
     </div>
   );
 }

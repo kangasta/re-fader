@@ -39,7 +39,7 @@ function getStyle(visibility: Visibility, scaling: Scaling): CSS.Properties {
   return {
     ...getScalingStyle(visibility, scaling),
     ...getVisibilityStyle(visibility),
-    transition: 'all 0.333s'
+    transition: 'all 0.3s'
   };
 }
 
