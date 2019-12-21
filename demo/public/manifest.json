@@ -1,0 +1,9 @@
+{
+  "short_name": "re-fader demo",
+  "name": "Demo application for re-fader",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
