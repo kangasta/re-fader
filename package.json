@@ -13,8 +13,7 @@
     "test": "jest src/",
     "type-check": "tsc --noEmit"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
