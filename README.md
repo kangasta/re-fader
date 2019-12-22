@@ -26,24 +26,26 @@ import { Fader, Changer, IntervalChanger } from 're-fader';
 </Fader>
 
 // Changer props
-<Changer scaling='xy'>
+<Changer fadeIn scaling='xy'>
   Children
 </Changer>
 
 // IntervalChanger props
-<Changer interval='1000' scaling='xy'>
+<IntervalChanger fadeIn interval='1000' scaling='xy'>
   <p>1</p>
   <p>2</p>
   <p>3</p>
   <p>Go!</p>
-</Changer>
+</IntervalChanger>
 ```
 
-Visibility is one of `show`, `hide`, or `none`. `hide` hides the children by changing the opacity to zero and optionally scaling the content. `none` removes the component by setting its display to none.
+`scaling` is one of `x`, `xy`, `y`, or `null` to disable the scaling. The letters define which coordinates should be scaled on hide and show.
 
-Scaling is one of `x`, `xy`, `y`, or `null` to disable the scaling. The letters define which coordinates should be scaled on hide and show.
+`visibility` is one of `show`, `hide`, or `none`. `hide` hides the children by changing the opacity to zero and optionally scaling the content. `none` removes the component by setting its display to none.
 
-Interval specifies the time in milliseconds between switching the active child.
+`fadeIn` specifies if the child should be faded in on mount.
+
+`interval` specifies the time in milliseconds between switching the active child.
 
 ## Testing
 

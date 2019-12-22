@@ -20,3 +20,13 @@ it('changes content after childrens change', async () => {
   await screen.findByText('Update');
   expect(screen.getByText('Update')).toHaveStyle('opacity: 1');
 });
+it('fades in component if specified', () => {
+  render(<Changer fadeIn>Test</Changer>);
+  expect(screen.queryByText('Test')).toBeFalsy();
+
+  act(() => {
+    jest.runOnlyPendingTimers();
+  });
+
+  expect(screen.getByText('Test')).toHaveStyle('opacity: 1');
+});
