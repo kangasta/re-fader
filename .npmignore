@@ -6,7 +6,7 @@
 .eslint*
 .travis.yml
 .prettierrc.yml
-jest.config.json
-tsconfig.json
+jest.config.js
+tsconfig*
 
 *.tgz
