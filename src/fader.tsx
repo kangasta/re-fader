@@ -35,26 +35,32 @@ function getScalingStyle(
   }
 }
 
-function getStyle(visibility: Visibility, scaling: Scaling): CSS.Properties {
+function getStyle(
+  visibility: Visibility,
+  scaling: Scaling,
+  transitionTime: number
+): CSS.Properties {
   return {
     ...getScalingStyle(visibility, scaling),
     ...getVisibilityStyle(visibility),
-    transition: 'all 0.3s'
+    transition: `all ${transitionTime}ms`
   };
 }
 
 export interface FaderProps extends React.HTMLAttributes<HTMLDivElement> {
   scaling?: Scaling;
+  transitionTime?: number;
   visibility?: Visibility;
 }
 
 export function Fader({
   scaling = null,
+  transitionTime = 300,
   visibility = 'show',
   children,
   ...props
 }: FaderProps): React.ReactElement {
-  const style = getStyle(visibility, scaling);
+  const style = getStyle(visibility, scaling, transitionTime);
 
   return (
     <div className="Fader" {...props} style={style}>

@@ -5,11 +5,13 @@ import { Fader, Scaling, Visibility } from './index';
 export interface ChangerProps extends React.HTMLAttributes<HTMLDivElement> {
   fadeIn?: boolean;
   scaling?: Scaling;
+  transitionTime?: number;
 }
 
 export function Changer({
   fadeIn = false,
   children,
+  transitionTime = 300,
   ...props
 }: ChangerProps): React.ReactElement {
   const [visibility, setVisibility] = useState<Visibility>('show');
@@ -23,17 +25,17 @@ export function Changer({
     }
 
     setVisibility('hide');
-    const timeout = !content ? 50 : 350;
+    const timeout = !content ? 50 : transitionTime + 50;
     const id = setTimeout((): void => {
       setContent(children);
       setVisibility('show');
     }, timeout);
 
     return (): void => clearTimeout(id);
-  }, [children, content]);
+  }, [children, content, transitionTime]);
 
   return (
-    <Fader visibility={visibility} {...props}>
+    <Fader visibility={visibility} transitionTime={transitionTime} {...props}>
       {content}
     </Fader>
   );

@@ -19,7 +19,6 @@ it('does not diplay children when specified', (): void => {
   );
   expect(screen.getByText('Test')).toHaveStyle('display: none');
 });
-
 [
   { visibility: 'show', scaling: 'xy', scaleStr: '1, 1' },
   { visibility: 'hide', scaling: 'x', scaleStr: '0, 1' },
@@ -32,4 +31,8 @@ it('does not diplay children when specified', (): void => {
       `transform: scale(${scaleStr})`
     );
   });
+});
+it('allows defining the transition time', (): void => {
+  render(<Fader transitionTime={500}>Test</Fader>);
+  expect(screen.getByText('Test')).toHaveStyle(`transition: all 500ms`);
 });
