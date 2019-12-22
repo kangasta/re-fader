@@ -1,14 +1,14 @@
 import React from 'react';
 import { act, render, screen } from '@testing-library/react';
 
-import { Switch } from '../index';
+import { Changer } from '../index';
 
 it('changes content after childrens change', async () => {
-  const container = render(<Switch>Test</Switch>);
+  const container = render(<Changer>Test</Changer>);
   expect(screen.getByText('Test')).toHaveStyle('opacity: 1');
 
   act(() => {
-    container.rerender(<Switch>Update</Switch>);
+    container.rerender(<Changer>Update</Changer>);
   });
 
   expect(screen.getByText('Test')).toHaveStyle('opacity: 0');

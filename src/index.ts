@@ -1,4 +1,4 @@
 import { Fader, FaderProps, Visibility, Scaling } from './fader';
-import { Switch, SwitchProps } from './switch';
+import { Changer, ChangerProps } from './changer';
 
-export { Fader, FaderProps, Visibility, Scaling, Switch, SwitchProps };
+export { Fader, FaderProps, Visibility, Scaling, Changer, ChangerProps };

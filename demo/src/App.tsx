@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Fader, Switch } from 're-fader';
+import { Fader, Changer } from 're-fader';
 
 import './App.css';
 
@@ -18,7 +18,7 @@ const App: React.FC = () => {
       <Fader visibility='hide'>Hide</Fader>
       <Fader scaling='xy' visibility='hide'>Scaled Hide</Fader>
       <Fader visibility='none'>None</Fader>
-      <Switch>{i}</Switch>
+      <Changer>{i}</Changer>
     </div>
   );
 }

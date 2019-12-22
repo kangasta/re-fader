@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 import { Fader, Scaling, Visibility } from './index';
 
-export interface SwitchProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ChangerProps extends React.HTMLAttributes<HTMLDivElement> {
   scaling?: Scaling;
 }
 
-export function Switch({
+export function Changer({
   children,
   ...props
-}: SwitchProps): React.ReactElement {
+}: ChangerProps): React.ReactElement {
   const [visibility, setVisibility] = useState<Visibility>('show');
   const [content, setContent] = useState<React.ReactNode>(children);
 
