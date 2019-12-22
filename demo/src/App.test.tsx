@@ -2,6 +2,6 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  expect(true).toBe(true);
+test('renders without crashing', () => {
+  render(<App/>);
 });
