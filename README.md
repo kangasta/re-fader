@@ -14,9 +14,11 @@ npm install re-fader
 
 ## Usage
 
+This package provides three components: Fader, Changer, and IntervalChanger. Fader fades in and out its children. Changer fades out the previous child and fades in the new child when its children are modified. IntervalChanger loops though its childs one at a time changing the active children at specified interval.
+
 ```jsx
 // Importing
-import { Fader, Changer } from 're-fader';
+import { Fader, Changer, IntervalChanger } from 're-fader';
 
 // Fader props
 <Fader scaling='xy' visibility='show'>
@@ -27,11 +29,21 @@ import { Fader, Changer } from 're-fader';
 <Changer scaling='xy'>
   Children
 </Changer>
+
+// IntervalChanger props
+<Changer interval='1000' scaling='xy'>
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>Go!</p>
+</Changer>
 ```
 
 Visibility is one of `show`, `hide`, or `none`. `hide` hides the children by changing the opacity to zero and optionally scaling the content. `none` removes the component by setting its display to none.
 
 Scaling is one of `x`, `xy`, `y`, or `null` to disable the scaling. The letters define which coordinates should be scaled on hide and show.
+
+Interval specifies the time in milliseconds between switching the active child.
 
 ## Testing
 
