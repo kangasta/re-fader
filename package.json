@@ -11,8 +11,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src -d dist --ignore '**/__tests__/*,demo/' --extensions \".ts,.tsx\" --source-maps inline",
+    "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "build:js": "babel src -d dist --ignore '**/__tests__/*,demo/,src/setupTests.ts' --extensions \".ts,.tsx\" --source-maps inline",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "pretest": "npm run lint",
     "test": "jest src/",

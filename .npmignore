@@ -1,6 +1,12 @@
 /coverage
+/demo
 /src
 
 .babelrc
 .eslint*
 .travis.yml
+.prettierrc.yml
+jest.config.json
+tsconfig.json
+
+*.tgz
