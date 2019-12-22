@@ -6,10 +6,11 @@ import './App.css';
 
 const App: React.FC = () => {
   const [i, setI ] = useState<number>(0)
+
   useEffect(() => {
-    const id = setInterval(() => setI(prev => prev++));
+    const id = setInterval(() => setI(prev => (prev + 1)), 2500);
     return () => clearInterval(id);
-  })
+  }, [])
 
   return (
     <div className="App">
@@ -18,6 +19,7 @@ const App: React.FC = () => {
       <Fader visibility='hide'>Hide</Fader>
       <Fader scaling='xy' visibility='hide'>Scaled Hide</Fader>
       <Fader visibility='none'>None</Fader>
+      <Changer scaling='y'>{i}</Changer>
       <Changer>{i}</Changer>
     </div>
   );
