@@ -30,3 +30,23 @@ it('fades in component if specified', () => {
 
   expect(screen.getByText('Test')).toHaveStyle('opacity: 1');
 });
+it('allows defining the transition time', (): void => {
+  const container = render(<Changer transitionTime={500}>Test</Changer>);
+  expect(screen.queryByText('Test')).toBeTruthy();
+
+  container.rerender(<Changer transitionTime={500}>Update</Changer>);
+
+  act(() => {
+    jest.advanceTimersByTime(450);
+  });
+
+  expect(screen.queryByText('Test')).toBeTruthy();
+  expect(screen.queryByText('Update')).toBeFalsy();
+
+  act(() => {
+    jest.advanceTimersByTime(100);
+  });
+
+  expect(screen.queryByText('Test')).toBeFalsy();
+  expect(screen.queryByText('Update')).toBeTruthy();
+});
