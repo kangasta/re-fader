@@ -1,6 +1,8 @@
 # re-fader
 
 [![Build Status](https://travis-ci.org/kangasta/re-fader.svg?branch=master)](https://travis-ci.org/kangasta/re-fader)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d10d9a7b53ce2ddd7168/maintainability)](https://codeclimate.com/github/kangasta/re-fader/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d10d9a7b53ce2ddd7168/test_coverage)](https://codeclimate.com/github/kangasta/re-fader/test_coverage)
 
 Fader and changer for React components. Changer fades out the old children and fades in the new children on props change.
 
