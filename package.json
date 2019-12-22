@@ -1,12 +1,12 @@
 {
   "name": "re-fader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fader for React components.",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/kangasta/re-fader.git"
+    "type": "git",
+    "url": "https://github.com/kangasta/re-fader.git"
   },
-  "license" : "MIT",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
